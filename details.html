@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>peshawar's transport tracker</title>
+
+
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!--font awasome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!--navbar-->
+
+    <nav class="nav-navbar nav-lg-expand my-nav">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <i class="bi bi-bus-front-fill nav-icon"></i>
+                <h5 class="nav-name">Peshawar Bus Tracker
+                    <div class="nav-quote">Smarter Travel , Less Crowded , A Better Peshawar</div>
+                </h5>
+            </div>
+
+            <div class="nav-links">
+                <a class="nav-link" href="#Home">Home</a>
+                <a class="nav-link" href="#How">How to Use</a>
+                <a class="nav-link" href="#about">About</a>
+            </div>
+
+            <button class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!--hero section-->
+
+    <div class="container-fluid2">
+        <img src="img screen 3.png" alt="img-screen3">
+
+        <div class="container-content2">
+            <div class="breadcrumb">
+                <i class="fa-solid fa-house"></i> Home &nbsp; > &nbsp; Search Results > &nbsp; Bus Details
+            </div>
+
+            <button class="back-btn2"><i class="fa-solid fa-arrow-left back-btn-icon"></i>Back to Results</button>
+
+            <h1 class="container-fluid2-heading" id="bus-name">E1-09</h1>
+        </div>
+    </div>
+
+    <section class="bus-details-section">
+
+        <!--top row-->
+
+        <div class="bus-details-row top-row">
+            <div class="detail-box">
+                <i class="bi bi-bus-front-fill detail-icon">
+                </i>
+                <div>
+                    <span>Bus Number</span>
+                    <strong id="busNum"></strong>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <i class="fa-solid fa-clock detail-icon"></i>
+                <div>
+                    <span>Arrival Time</span>
+                    <strong id="arrivalTime"></strong>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <i class="fa-solid fa-money-bill-wave detail-icon"></i>
+                <div>
+                    <span>Fare</span>
+                    <strong id="fare">
+                        
+                    </strong>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <i class="fa-solid fa-arrows-rotate detail-icon">
+                </i>
+                <div>
+                    <span>Total Stops</span>
+                    <strong id="totalStop"></strong>
+                </div>
+            </div>
+        </div>
+
+        <!--bottom row-->
+
+        <div class="bus-details-row bottom-row">
+            <div class="detail-box">
+                <i class="fa-solid fa-users detail-icon"></i>
+                <div>
+                    <span>Current Passengers</span>
+                    <strong id="currentPassengers"></strong>
+
+                    <div class="Passenger-progress">
+                        <div class="progress">
+                        <div class="progress-fill" id="progressFill" role="progressbar" style="width: 0%;">
+                        </div>
+                        </div>
+                    </div>
+
+                    <small id="PassengerPercentage"></small>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <i class="fa-solid fa-users detail-icon"></i>
+                <div>
+                    <span>Crowd Level</span>
+                    <strong id="crowdLevel" class="crowd-badge">
+                        
+                    </strong>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <i class="fa-solid fa-money-bill-wave detail-icon"></i>
+                <div>
+                    <span>Capacity</span>
+                    <strong id="capacity">
+                        
+                    </strong>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--complete route and quick infotmation about bus-->
+
+    <div class="route-info-row">
+
+        <!--ruote information of bus-->
+        <section class="complete-route-sec">
+            <h2>Complete Route</h2>
+
+            <div class="route-container">
+                <div class="route-content">
+                    <div class="route-start">
+                        <span>Start</span>
+                    </div>
+
+                    <div class="route-list" id="routeList">
+                        <div class="route-stop">route</div>
+                        <div class="route-stop">route</div>
+                        <div class="route-stop">route</div>
+                        <div class="route-stop">route</div>
+                        <div class="route-stop">route</div>
+                        <div class="route-stop">route</div>
+                        <div class="route-stop">route</div>
+                        <div class="route-stop">route</div>
+                        <div class="route-stop">route</div>
+                        <div class="route-stop">route</div>
+                        <div class="route-stop">route</div>
+                    </div>
+
+                    <div class="route-end">
+                        <span>End</span>
+                    </div>
+                </div>
+
+                <div class="route-quote">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <h3>Every Stop<br>Brings You Closer</h3>
+                    <p>Your journey, one stop at a time.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!--quick information of bus-->
+
+        <section class="quick-info-section">
+            <h2>Public Transport</h2>
+
+            <div class="quick-info-box">
+                <div class="quick-info-item">
+                    <div>
+                      <h3>You can't understand a <br> city without using its <span>public <br> transportation system</span></h3><small>~ Erol Ozan</small>
+                    </div>
+                </div>
+
+                <div class="quick-info-item">
+                    <div>
+                        <img src="bus onmap.png" alt="bus on map">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!--footer-->
+
+    <footer class="my-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <i class="bi bi-bus-front-fill footer-icon"></i>
+                <h5 class="footer-name">Peshawar Bus Tracker
+                    <div class="footer-quote">Smarter Travel , Less Crowded , A Better Peshawar</div>
+                </h5>
+            </div>
+
+            <div class="copyright">
+                <p><i class="fa-regular fa-copyright"></i> 2026 <b>Peshawar Bus Tracker</b>. All Rights Reserved.</p>
+            </div>
+
+            <div class="follow-footer">
+            <b>Follow Us</b>
+            <div class="social-media">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+            </div>
+            </div>
+
+        </div>
+
+
+    </footer>
+
+<script src="app.js"></script>
+</body>
